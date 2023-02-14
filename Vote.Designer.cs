@@ -41,18 +41,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(39, 195);
+            this.label1.Location = new System.Drawing.Point(124, 555);
+            this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 25);
+            this.label1.Size = new System.Drawing.Size(183, 72);
             this.label1.TabIndex = 15;
             this.label1.Text = "Party";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(38, 34);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(171, 122);
+            this.pictureBox1.Size = new System.Drawing.Size(542, 347);
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
@@ -60,20 +62,23 @@
             // 
             this.btnVote.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVote.ForeColor = System.Drawing.Color.Black;
-            this.btnVote.Location = new System.Drawing.Point(258, 350);
+            this.btnVote.Location = new System.Drawing.Point(817, 996);
+            this.btnVote.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.btnVote.Name = "btnVote";
-            this.btnVote.Size = new System.Drawing.Size(184, 47);
+            this.btnVote.Size = new System.Drawing.Size(583, 134);
             this.btnVote.TabIndex = 19;
-            this.btnVote.Text = "Login";
+            this.btnVote.Text = "Vote";
             this.btnVote.UseVisualStyleBackColor = true;
+            this.btnVote.Click += new System.EventHandler(this.btnVote_Click);
             // 
             // btnLogout
             // 
             this.btnLogout.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.Black;
-            this.btnLogout.Location = new System.Drawing.Point(44, 350);
+            this.btnLogout.Location = new System.Drawing.Point(139, 996);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(184, 47);
+            this.btnLogout.Size = new System.Drawing.Size(583, 134);
             this.btnLogout.TabIndex = 22;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -82,22 +87,24 @@
             // 
             this.cbParty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbParty.FormattingEnabled = true;
-            this.cbParty.Location = new System.Drawing.Point(258, 195);
+            this.cbParty.Location = new System.Drawing.Point(817, 555);
+            this.cbParty.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.cbParty.Name = "cbParty";
-            this.cbParty.Size = new System.Drawing.Size(184, 21);
+            this.cbParty.Size = new System.Drawing.Size(574, 45);
             this.cbParty.TabIndex = 23;
             // 
             // Vote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.ClientSize = new System.Drawing.Size(1533, 1312);
             this.Controls.Add(this.cbParty);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnVote);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Vote";
