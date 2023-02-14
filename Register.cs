@@ -20,5 +20,12 @@ namespace Voting_Platform
         private void pictureBox1_Click(object sender, EventArgs e)
         {
                     }
+
+        private void linklblLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Login loginForm = new Login();
+            loginForm.Show();
+            this.Hide();
+        }
     }
 }

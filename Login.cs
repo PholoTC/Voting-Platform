@@ -16,5 +16,12 @@ namespace Voting_Platform
         {
             InitializeComponent();
         }
+
+        private void linklblRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Register regForm = new Register();
+            regForm.Show();
+            this.Hide();
+        }
     }
 }

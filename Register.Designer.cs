@@ -43,9 +43,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(57, 196);
+            this.label1.Location = new System.Drawing.Point(180, 558);
+            this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 24);
+            this.label1.Size = new System.Drawing.Size(297, 65);
             this.label1.TabIndex = 0;
             this.label1.Text = "Full Name";
             // 
@@ -53,33 +54,37 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(57, 279);
+            this.label2.Location = new System.Drawing.Point(180, 794);
+            this.label2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 24);
+            this.label2.Size = new System.Drawing.Size(176, 65);
             this.label2.TabIndex = 1;
             this.label2.Text = "Email";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(258, 201);
+            this.txtName.Location = new System.Drawing.Point(817, 572);
+            this.txtName.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(184, 20);
+            this.txtName.Size = new System.Drawing.Size(574, 44);
             this.txtName.TabIndex = 2;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(258, 284);
+            this.txtEmail.Location = new System.Drawing.Point(817, 808);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(184, 20);
+            this.txtEmail.Size = new System.Drawing.Size(574, 44);
             this.txtEmail.TabIndex = 3;
             // 
             // btnRegister
             // 
             this.btnRegister.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.Black;
-            this.btnRegister.Location = new System.Drawing.Point(258, 350);
+            this.btnRegister.Location = new System.Drawing.Point(817, 996);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(184, 47);
+            this.btnRegister.Size = new System.Drawing.Size(583, 134);
             this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
@@ -87,29 +92,32 @@
             // linklblLogin
             // 
             this.linklblLogin.AutoSize = true;
-            this.linklblLogin.Location = new System.Drawing.Point(255, 429);
+            this.linklblLogin.Location = new System.Drawing.Point(808, 1221);
+            this.linklblLogin.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.linklblLogin.Name = "linklblLogin";
-            this.linklblLogin.Size = new System.Drawing.Size(127, 13);
+            this.linklblLogin.Size = new System.Drawing.Size(382, 37);
             this.linklblLogin.TabIndex = 6;
             this.linklblLogin.TabStop = true;
             this.linklblLogin.Text = "Already a Member? Login";
+            this.linklblLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblLogin_LinkClicked);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(38, 34);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(171, 122);
+            this.pictureBox1.Size = new System.Drawing.Size(542, 347);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Register
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.ClientSize = new System.Drawing.Size(1533, 1312);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.linklblLogin);
             this.Controls.Add(this.btnRegister);
@@ -117,6 +125,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Register";

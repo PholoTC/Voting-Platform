@@ -42,54 +42,61 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(38, 34);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(171, 122);
+            this.pictureBox1.Size = new System.Drawing.Size(542, 347);
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
             // linklblRegister
             // 
             this.linklblRegister.AutoSize = true;
-            this.linklblRegister.Location = new System.Drawing.Point(255, 429);
+            this.linklblRegister.Location = new System.Drawing.Point(808, 1221);
+            this.linklblRegister.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.linklblRegister.Name = "linklblRegister";
-            this.linklblRegister.Size = new System.Drawing.Size(122, 13);
+            this.linklblRegister.Size = new System.Drawing.Size(363, 37);
             this.linklblRegister.TabIndex = 13;
             this.linklblRegister.TabStop = true;
             this.linklblRegister.Text = "Not a Member? Register";
+            this.linklblRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblRegister_LinkClicked);
             // 
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.Black;
-            this.btnLogin.Location = new System.Drawing.Point(258, 350);
+            this.btnLogin.Location = new System.Drawing.Point(817, 996);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(184, 47);
+            this.btnLogin.Size = new System.Drawing.Size(583, 134);
             this.btnLogin.TabIndex = 12;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(258, 284);
+            this.txtEmail.Location = new System.Drawing.Point(817, 808);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(184, 20);
+            this.txtEmail.Size = new System.Drawing.Size(574, 44);
             this.txtEmail.TabIndex = 11;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(258, 201);
+            this.txtName.Location = new System.Drawing.Point(817, 572);
+            this.txtName.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(184, 20);
+            this.txtName.Size = new System.Drawing.Size(574, 44);
             this.txtName.TabIndex = 10;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(39, 278);
+            this.label2.Location = new System.Drawing.Point(124, 791);
+            this.label2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 25);
+            this.label2.Size = new System.Drawing.Size(192, 72);
             this.label2.TabIndex = 9;
             this.label2.Text = "Email";
             // 
@@ -97,18 +104,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(39, 195);
+            this.label1.Location = new System.Drawing.Point(124, 555);
+            this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 25);
+            this.label1.Size = new System.Drawing.Size(324, 72);
             this.label1.TabIndex = 8;
             this.label1.Text = "Full Name";
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.ClientSize = new System.Drawing.Size(1533, 1312);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.linklblRegister);
             this.Controls.Add(this.btnLogin);
@@ -117,7 +125,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Login";
