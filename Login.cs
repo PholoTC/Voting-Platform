@@ -44,8 +44,9 @@ namespace Voting_Platform
                     VoterID = Convert.ToInt32(result);
                    // MessageBox.Show("Login Successful");
                     frmVote.getUId(VoterID);
-                    frmVote.ShowDialog();
                     this.Hide();
+                    frmVote.ShowDialog();
+                    
                 }
                 else
                 {

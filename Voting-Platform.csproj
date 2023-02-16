@@ -65,6 +65,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VOTING_PLATFORMDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="VOTING_PLATFORMDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VOTING_PLATFORMDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +104,17 @@
     </None>
     <None Include="VOTING_PLATFORMDataSet.xss">
       <DependentUpon>VOTING_PLATFORMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VOTING_PLATFORMDataSet1.xsc">
+      <DependentUpon>VOTING_PLATFORMDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="VOTING_PLATFORMDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VOTING_PLATFORMDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VOTING_PLATFORMDataSet1.xss">
+      <DependentUpon>VOTING_PLATFORMDataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
