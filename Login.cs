@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Voting_Platform
 {
@@ -16,26 +17,49 @@ namespace Voting_Platform
         public Login()
         {
             InitializeComponent();
+            
         }
+        public  static int VoterID { get; set; }
+
         SqlConnection con = new SqlConnection("Data Source=RYZEN-3;Initial Catalog=VOTING_PLATFORM;Integrated Security=True");
 
-        private void linklblRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Register regForm = new Register();
-            regForm.Show();
-            this.Hide();
-        }
+        
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtName.Text.Length > 0 && txtEmail.Text.Length > 0)
+           
+            try
             {
+                con.Open();
+                String comm = "exec dbo.SP_Login '"+ txtName.Text+"', '"+txtEmail.Text+"'";
+                SqlCommand cmd = new SqlCommand(comm, con);
+            cmd.ExecuteNonQuery();
+                //SqlDataReader sqlDr = cmd.ExecuteReader();
+                object result = cmd.ExecuteScalar();
+                Vote frmVote = new Vote();
+                
 
+                if ( result !=null)
+                {
+                    VoterID = Convert.ToInt32(result);
+                   // MessageBox.Show("Login Successful");
+                    frmVote.getUId(VoterID);
+                    frmVote.ShowDialog();
+                    this.Hide();
+                }
+                else
+                {
+                MessageBox.Show("Login NOT Successfully");
+
+                }
+                
+                //sqlDr.Close();
+                con.Close();
             }
-            else
-            {
-                MessageBox.Show("Name and Email Required");
-            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+
+           
         }
     }
 }
