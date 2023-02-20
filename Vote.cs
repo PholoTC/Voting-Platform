@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Voting_Platform
 {
@@ -17,12 +18,16 @@ namespace Voting_Platform
     {
         public Vote()
         {
-            InitializeComponent();
+            InitializeComponent();        
+
         }
 
         public int VoterId = 0;
         public int PartyId = 0;
         SqlConnection con = new SqlConnection("Data Source=RYZEN-3;Initial Catalog=VOTING_PLATFORM;Integrated Security=True");
+
+
+
 
         internal void getUId(int uId)
         {
@@ -31,20 +36,48 @@ namespace Voting_Platform
 
         private void btnVote_Click(object sender, EventArgs e)
         {
-            PartyId = (int)cbParty.SelectedValue;
 
-            try
+            string comm = "exec dbo.SP_hasVoted '" + VoterId + "'";
+            SqlCommand cmd = new SqlCommand(comm, con);
+
+            SqlDataAdapter sda = new SqlDataAdapter(comm, con);
+            DataTable dataTable = new DataTable();
+            sda.Fill(dataTable);
+
+
+            if (dataTable.Rows.Count > 0)
             {
-                con.Open();
-                String comm = "exec dbo.SP_Vote '" + VoterId + "', '" + PartyId + "'";
-                SqlCommand cmd = new SqlCommand(comm, con);
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("vote Successful");
-
-                con.Close();
+                //user has already voted
+                MessageBox.Show("User has voted \nSee Winner");
+                btnVote.Enabled = false;
+                btnWinner.Focus();
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            else
+            {
+                //User ma Vote
+                PartyId = (int)cbParty.SelectedValue;
+
+                try
+                {
+                    con.Open();
+                    String comm2 = "exec dbo.SP_Vote '" + VoterId + "', '" + PartyId + "'";
+                    SqlCommand cmd2 = new SqlCommand(comm2, con);
+                    cmd2.ExecuteNonQuery();
+
+                    MessageBox.Show("vote Successful");
+
+                    con.Close();
+                }
+                catch (Exception ex) { MessageBox.Show(ex.Message); }
+            }
+
+
+
+
+
+
+
+           
 
         }
 
@@ -62,6 +95,7 @@ namespace Voting_Platform
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
 
         private void btnWinner_Click(object sender, EventArgs e)
@@ -69,7 +103,7 @@ namespace Voting_Platform
             try
             {
                 con.Open();
-               
+
                 string comm = "exec dbo.SP_GetWinner";
                 SqlCommand cmd = new SqlCommand(comm, con);
                 // cmd.ExecuteNonQuery();
@@ -93,43 +127,43 @@ namespace Voting_Platform
                     {
                         MessageBox.Show("ANC is the winner with " + anc + " votes");
                     }
-                     if (da > eff && da > anc && da > actionSa && da > ifp && da > cope
-                        && da > id && da > udm && da > vf)
+                    if (da > eff && da > anc && da > actionSa && da > ifp && da > cope
+                       && da > id && da > udm && da > vf)
                     {
                         MessageBox.Show("DA is the winner with " + da + " votes");
                     }
-                     if (eff > da && eff > anc && eff > actionSa && eff > ifp && eff > cope
-                        && eff > id && eff > udm && eff > vf)
+                    if (eff > da && eff > anc && eff > actionSa && eff > ifp && eff > cope
+                       && eff > id && eff > udm && eff > vf)
                     {
                         MessageBox.Show("EFF is the winner with " + eff + " votes");
                     }
-                     if (actionSa > da && actionSa > anc && actionSa > eff && actionSa > ifp && actionSa > cope
-                       && actionSa > id && actionSa > udm && actionSa > vf)
+                    if (actionSa > da && actionSa > anc && actionSa > eff && actionSa > ifp && actionSa > cope
+                      && actionSa > id && actionSa > udm && actionSa > vf)
                     {
                         MessageBox.Show("Action SA is the winner with " + actionSa + " votes");
                     }
-                     if (ifp > da && ifp > anc && ifp > eff && ifp > actionSa && ifp > cope
-                       && ifp > id && ifp > udm && ifp > vf)
+                    if (ifp > da && ifp > anc && ifp > eff && ifp > actionSa && ifp > cope
+                      && ifp > id && ifp > udm && ifp > vf)
                     {
                         MessageBox.Show("IFP is the winner with " + ifp + " votes");
                     }
-                     if (cope > eff && cope > anc && cope > actionSa && cope > ifp && cope > da
-                       && cope > id && cope > udm && cope > vf)
+                    if (cope > eff && cope > anc && cope > actionSa && cope > ifp && cope > da
+                      && cope > id && cope > udm && cope > vf)
                     {
                         MessageBox.Show("COPE is the winner with " + cope + " votes");
                     }
-                     if (id > eff && id > anc && id > actionSa && id > ifp && id > da
-                       && id > cope && id > udm && id > vf)
+                    if (id > eff && id > anc && id > actionSa && id > ifp && id > da
+                      && id > cope && id > udm && id > vf)
                     {
                         MessageBox.Show("ID is the winner with " + id + " votes");
                     }
-                     if (udm > eff && udm > anc && udm > actionSa && udm > ifp && udm > da
-                       && udm > cope && udm > id && udm > vf)
+                    if (udm > eff && udm > anc && udm > actionSa && udm > ifp && udm > da
+                      && udm > cope && udm > id && udm > vf)
                     {
                         MessageBox.Show("UDM is the winner with " + udm + " votes");
                     }
-                     if (vf > eff && vf > anc && vf > actionSa && vf > ifp && vf > da
-                       && vf > cope && vf > id && vf > udm)
+                    if (vf > eff && vf > anc && vf > actionSa && vf > ifp && vf > da
+                      && vf > cope && vf > id && vf > udm)
                     {
                         MessageBox.Show("VF is the winner with " + vf + " votes");
                     }

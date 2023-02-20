@@ -27,8 +27,53 @@ namespace Voting_Platform
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           
+            Vote frmVote = new Vote();
+
+            string username;
+            string password;
+
+            username = txtName.Text;
+            password   = txtEmail.Text;
+
             try
+            {
+                string querry = "exec SP_Login '"+ username+ "', '"+ password+"'";
+
+                SqlDataAdapter sda = new SqlDataAdapter(querry, con);
+                DataTable dataTable = new DataTable();
+                sda.Fill(dataTable);
+
+              
+
+                 if (dataTable.Rows.Count > 0 )
+                {
+                    //Get  UserId from line in Datatable
+                    VoterID = (from DataRow dr in dataTable.Rows
+                               where (string)dr["FullNames"] == username
+                               select (int)dr["VoterId"]).FirstOrDefault();
+
+                    frmVote.getUId(VoterID);
+                    this.Hide();
+                    frmVote.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Login Details","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    txtName.Clear();    
+                    txtEmail.Clear();
+
+                    txtName.Focus();
+                }
+
+
+            }
+            catch {
+                MessageBox.Show("ERROR");
+            }
+            finally { con.Close(); }
+
+           
+           /* try
             {
                 con.Open();
                 String comm = "exec dbo.SP_Login '"+ txtName.Text+"', '"+txtEmail.Text+"'";
@@ -57,7 +102,7 @@ namespace Voting_Platform
                 //sqlDr.Close();
                 con.Close();
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }*/
 
 
            
